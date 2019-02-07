@@ -1,6 +1,11 @@
+const count = 0;
+
 exports.handler = function(event, context, callback) {
+    count++;
     callback(null, {
         statusCode: 200,
-        body: "Hello, World"
+        body: JSON.stringify({
+            count
+        })
     });
 };
