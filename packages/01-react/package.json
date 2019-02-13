@@ -2,7 +2,6 @@
   "name": "01-react",
   "version": "0.2.0",
   "private": true,
-  "dependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -19,7 +18,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "00-components": "^0.2.0",
+    "00-components": "^0.3.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-scripts": "^2.1.3",
