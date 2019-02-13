@@ -1,26 +1,26 @@
 {
-    "name": "react-redux-rxjs-workshop",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "start:lambda": "netlify-lambda serve lambda-src",
-        "build": "npm run build:lambda",
-        "build:lambda": "netlify-lambda build lambda-src"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/sergio-toro/react-redux-rxjs-workshop.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/sergio-toro/react-redux-rxjs-workshop/issues"
-    },
-    "homepage": "https://github.com/sergio-toro/react-redux-rxjs-workshop#readme",
-    "dependencies": {},
-    "devDependencies": {
-        "lerna": "^3.11.1",
-        "netlify-lambda": "^1.4.1"
-    }
+  "name": "react-redux-rxjs-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "start:lambda": "netlify-lambda serve lambda-src",
+    "build": "npm run build:lambda",
+    "build:lambda": "netlify-lambda build lambda-src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergio-toro/react-redux-rxjs-workshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergio-toro/react-redux-rxjs-workshop/issues"
+  },
+  "homepage": "https://github.com/sergio-toro/react-redux-rxjs-workshop#readme",
+  "devDependencies": {
+    "lerna": "^3.11.1",
+    "netlify-lambda": "^1.4.1"
+  }
 }
