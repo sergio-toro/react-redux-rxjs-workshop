@@ -1,5 +1,5 @@
 {
-  "name": "@storo90/00-components",
+  "name": "00-components",
   "version": "0.2.0",
   "private": false,
   "main": "src/index.js",
