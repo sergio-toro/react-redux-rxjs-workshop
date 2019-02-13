@@ -1,8 +1,9 @@
 {
-  "name": "lambda-server",
+  "name": "@sergio-toro/lambda-server",
   "version": "1.0.0",
   "description": "",
   "main": "facts.js",
+  "private": true,
   "scripts": {
     "start": "netlify-lambda serve src",
     "build": "netlify-lambda build src"
