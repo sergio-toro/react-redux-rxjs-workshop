@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "start:lambda": "netlify-lambda serve lambda-src",
-    "build": "npm run build:lambda",
-    "build:lambda": "netlify-lambda build lambda-src"
+    "start:lambda": "cd packages/lambda-server && npm run start",
+    "start:01": "cd packages/01-react && npm run start"
   },
   "repository": {
     "type": "git",
@@ -20,7 +19,6 @@
   },
   "homepage": "https://github.com/sergio-toro/react-redux-rxjs-workshop#readme",
   "devDependencies": {
-    "lerna": "^3.11.1",
-    "netlify-lambda": "^1.4.1"
+    "lerna": "^3.11.1"
   }
 }

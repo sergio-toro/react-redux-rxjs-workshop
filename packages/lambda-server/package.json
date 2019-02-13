@@ -1,0 +1,15 @@
+{
+  "name": "lambda-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "facts.js",
+  "scripts": {
+    "start": "netlify-lambda serve src",
+    "build": "netlify-lambda build src"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "netlify-lambda": "^1.4.1"
+  }
+}
