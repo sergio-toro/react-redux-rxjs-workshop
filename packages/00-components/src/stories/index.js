@@ -6,7 +6,7 @@ import { linkTo } from "@storybook/addon-links";
 
 import { Button, Welcome } from "@storybook/react/demo";
 
-import { Fact } from "../";
+import { Fact } from "../components";
 
 storiesOf("Fact", module).add("to Storybook", () => <Fact />);
 
