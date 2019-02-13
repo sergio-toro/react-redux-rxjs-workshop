@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "build:lambda": "cd packages/lambda-server && npm run build",
     "start:lambda": "cd packages/lambda-server && npm run start",
     "start:01": "cd packages/01-react && npm run start"
   },

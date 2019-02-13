@@ -1,0 +1,4 @@
+[build]
+  base = "packages/lambda-server"
+  command = "npm run build"
+  functions = "packages/lambda-server/lambda-build"
