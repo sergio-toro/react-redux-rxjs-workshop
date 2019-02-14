@@ -8,7 +8,7 @@
     "build:components": "cd packages/00-components && npm run build",
     "build:lambda": "cd packages/lambda-server && npm run build",
     "start:lambda": "cd packages/lambda-server && npm run start",
-    "start:storybook": "cd packages/00-components && npm run storybook",
+    "start:components": "cd packages/00-components && npm run storybook",
     "start:01": "cd packages/01-react && npm run start"
   },
   "repository": {
