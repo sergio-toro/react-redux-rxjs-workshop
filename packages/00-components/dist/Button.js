@@ -21,7 +21,7 @@ function _templateObject() {
 }
 
 import styled, { css } from "styled-components";
-import defaultTheme from "../theme/default";
+import defaultTheme from "./theme/default";
 var Button = styled.a(_templateObject(), function (_ref) {
   var theme = _ref.theme;
   return theme.fontFamily;

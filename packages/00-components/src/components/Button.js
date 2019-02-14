@@ -1,7 +1,7 @@
 // @flow
 import styled, { css } from "styled-components";
 
-import defaultTheme from "../theme/default";
+import defaultTheme from "./theme/default";
 
 type Props = {
   primary: boolean
