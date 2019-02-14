@@ -2,6 +2,11 @@ import { get } from "./utils/request";
 
 const BASE_URL = "https://cat-fact.herokuapp.com";
 
+const headers = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "Content-Type"
+};
+
 function randomWait(maxWait = 5) {
   return new Promise(resolve => {
     const seconds = Math.floor(Math.random() * maxWait) + 1;
@@ -15,6 +20,7 @@ export async function handler(event, context) {
   await randomWait();
   return {
     statusCode: 200,
+    headers,
     body: data
   };
 }
