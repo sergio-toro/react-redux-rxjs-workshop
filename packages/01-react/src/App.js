@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import logo from "./logo.svg";
-import "./App.css";
 
 import { Fact } from "00-components";
 
-const Logo = styled.img`
-  width: 50px;
-`;
-
 class App extends Component {
+  async componentDidMount() {
+    try {
+      const response = await fetch("https://kodify-workshop.netlify.com/.netlify/functions/facts", { credentials: "omit" });
+      if (response.status === 200) {
+        const data = await response.json();
+        console.log("hello data!", data);
+      }
+    } catch (error) {
+      console.log("error :/", error, error.message, error.stack);
+    }
+  }
+
   render() {
     return (
       <div>
-        <header>
-          <Logo src={logo} alt="logo" />
-          Cat facts
-        </header>
-
-        <Fact />
+        <header>Cat facts</header>
       </div>
     );
   }
