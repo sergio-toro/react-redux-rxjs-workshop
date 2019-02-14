@@ -1,23 +1,19 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { linkTo } from "@storybook/addon-links";
+import { Fact, Button, Loading } from "../components";
 
-import { Button, Welcome } from "@storybook/react/demo";
+const text =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu ipsum mollis, accumsan ligula ac, gravida velit. Nam euismod viverra.";
 
-import { Fact } from "../components";
-
-storiesOf("Fact", module).add("to Storybook", () => <Fact />);
-
-storiesOf("Welcome", module).add("to Storybook", () => <Welcome showApp={linkTo("Button")} />);
+storiesOf("Fact", module)
+  .add("cat", () => <Fact text={text} type="cat" />)
+  .add("dog", () => <Fact text={text} type="dog" />)
+  .add("snail", () => <Fact text={text} type="snail" />)
+  .add("horse", () => <Fact text={text} type="horse" />);
 
 storiesOf("Button", module)
-  .add("with text", () => <Button onClick={action("clicked")}>Hello Button</Button>)
-  .add("with some emoji", () => (
-    <Button onClick={action("clicked")}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
+  .add("default", () => <Button>Some action</Button>)
+  .add("primary", () => <Button primary>Some action</Button>);
+
+storiesOf("Loading", module).add("default", () => <Loading />);
