@@ -1,8 +1,17 @@
 // @flow
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 
-import { ErrorMessage, Button, Fact as BaseFact, Loading as BaseLoading, defaultTheme } from "00-components";
+import {
+  ErrorMessage,
+  Button as BaseButton,
+  Fact as BaseFact,
+  Loading as BaseLoading,
+  SelectList as BaseSelectList,
+  RadioList as BaseRadioList,
+  CheckboxList as BaseCheckboxList,
+  defaultTheme
+} from "00-components";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -17,16 +26,23 @@ GlobalStyle.defaultProps = {
   theme: defaultTheme
 };
 
-const Title = styled.h1`
-  display: inline-block;
+const Button = styled(BaseButton)`
+  margin-left: 0;
+  margin-right: 20px;
 `;
 
-const LambdaChoice = styled.div`
-  display: inline-block;
-  padding-left: 50px;
-  label {
-    margin-left: 10px;
-  }
+const RadioList = styled(BaseRadioList)`
+  padding-right: 20px;
+  line-height: 40px;
+`;
+
+const CheckboxList = styled(BaseCheckboxList)`
+  padding-right: 20px;
+  line-height: 40px;
+`;
+
+const SelectList = styled(BaseSelectList)`
+  line-height: 40px;
 `;
 
 const Results = styled.div`
@@ -52,6 +68,8 @@ const Loading = styled(BaseLoading)`
 type State = {
   hasError: boolean,
   isLoading: boolean,
+  amount: number,
+  animals: Array<"cat" | "dog" | "snail" | "horse">,
   lambdaFunction: "facts" | "slow-facts",
   facts: Object[]
 };
@@ -59,7 +77,9 @@ class App extends Component<any, State> {
   state = {
     hasError: false,
     isLoading: false,
+    amount: 8,
     lambdaFunction: "facts",
+    animals: ["cat"],
     facts: []
   };
 
@@ -70,9 +90,8 @@ class App extends Component<any, State> {
   async fetchFacts() {
     try {
       this.setState({ isLoading: true });
-      const { lambdaFunction } = this.state;
-      const amount = 8;
-      const types = "cat,dog,snail,horse";
+      const { lambdaFunction, animals, amount } = this.state;
+      const types = animals.join(",");
       const response = await fetch(
         `https://kodify-workshop.netlify.com/.netlify/functions/${lambdaFunction}?amount=${amount}&types=${types}`
       );
@@ -89,49 +108,67 @@ class App extends Component<any, State> {
     this.fetchFacts();
   };
 
-  onLambdaFunctionChanged = event => {
-    this.setState({ lambdaFunction: event.target.value }, () => this.fetchFacts());
+  onLambdaFunctionChanged = lambdaFunction => {
+    this.setState({ lambdaFunction }, () => this.fetchFacts());
+  };
+
+  onAnimalsChanged = animals => {
+    this.setState({ animals }, () => this.fetchFacts());
+  };
+
+  onAmountChanged = amount => {
+    this.setState({ amount }, () => this.fetchFacts());
   };
 
   render() {
-    const { hasError, isLoading, facts, lambdaFunction } = this.state;
+    const { hasError, isLoading, facts, lambdaFunction, animals, amount } = this.state;
     return (
-      <div>
+      <Fragment>
         <GlobalStyle />
         <header>
-          <Title>Cat facts</Title>
-          <LambdaChoice>
-            Endpoint:
-            <label>
-              <input
-                type="radio"
-                name="lambda"
-                value="facts"
-                checked={lambdaFunction === "facts"}
-                onChange={this.onLambdaFunctionChanged}
-              />
-              &nbsp; Facts
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="lambda"
-                value="slow-facts"
-                checked={lambdaFunction === "slow-facts"}
-                onChange={this.onLambdaFunctionChanged}
-              />
-              &nbsp; Slow Facts
-            </label>
-          </LambdaChoice>
+          <h1>Cat facts</h1>
         </header>
 
         <Button onClick={this.onFetchFacts}>Refresh Facts</Button>
+        <RadioList
+          title="Endpoint:"
+          name="lambda"
+          value={lambdaFunction}
+          options={[{ value: "facts", text: "Facts" }, { value: "slow-facts", text: "Slow Facts" }]}
+          onChange={this.onLambdaFunctionChanged}
+        />
+        <CheckboxList
+          title="Animals:"
+          name="animals"
+          values={animals}
+          options={[
+            { value: "cat", text: "Cat" },
+            { value: "dog", text: "Dog" },
+            { value: "snail", text: "Snail" },
+            { value: "horse", text: "Horse" }
+          ]}
+          onChange={this.onAnimalsChanged}
+        />
+
+        <SelectList
+          title="Amount"
+          name="amount"
+          value={amount}
+          options={[
+            { value: 8, text: "8" },
+            { value: 16, text: "16" },
+            { value: 32, text: "32" },
+            { value: 64, text: "64" }
+          ]}
+          onChange={this.onAmountChanged}
+        />
+
         <Results>
           {hasError && <ErrorMessage>Error while fetching facts, try again later</ErrorMessage>}
           {isLoading && <Loading size={100} />}
           {!isLoading && facts.map(fact => <Fact key={fact._id} text={fact.text} type={fact.type} />)}
         </Results>
-      </div>
+      </Fragment>
     );
   }
 }
