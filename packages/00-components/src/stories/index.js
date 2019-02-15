@@ -3,7 +3,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import { CheckboxList, RadioList, Fact, Button, Loading, ErrorMessage } from "../components";
+import { CheckboxList, SelectList, RadioList, Fact, Button, Loading, ErrorMessage } from "../components";
 
 const text =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu ipsum mollis, accumsan ligula ac, gravida velit. Nam euismod viverra.";
@@ -21,6 +21,25 @@ storiesOf("Button", module)
 storiesOf("Loading", module).add("default", () => <Loading />);
 
 storiesOf("ErrorMessage", module).add("default", () => <ErrorMessage>Error while performing some action</ErrorMessage>);
+
+storiesOf("SelectList", module)
+  .add("default", () => (
+    <SelectList
+      title="Options"
+      name="options"
+      options={[{ value: "1", text: "Option 1" }, { value: "2", text: "Option 2" }]}
+      onChange={action("change")}
+    />
+  ))
+  .add("option 2 selected", () => (
+    <SelectList
+      title="Options"
+      name="options"
+      value="2"
+      options={[{ value: "1", text: "Option 1" }, { value: "2", text: "Option 2" }]}
+      onChange={action("change")}
+    />
+  ));
 
 storiesOf("RadioList", module)
   .add("default", () => (
