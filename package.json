@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
     "build:components": "cd packages/00-components && npm run build",
     "build:lambda": "cd packages/lambda-server && npm run build",
     "start:lambda": "cd packages/lambda-server && npm run start",
-    "start:components": "cd packages/00-components && npm run storybook",
+    "start:components": "cd packages/00-components && npm run start",
     "start:01": "cd packages/01-react && npm run start"
   },
   "repository": {
@@ -22,6 +23,11 @@
   },
   "homepage": "https://github.com/sergio-toro/react-redux-rxjs-workshop#readme",
   "devDependencies": {
-    "lerna": "^3.11.1"
+    "lerna": "^3.11.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-scripts": "^2.1.5",
+    "rimraf": "^2.6.3",
+    "styled-components": "^4.1.3"
   }
 }
