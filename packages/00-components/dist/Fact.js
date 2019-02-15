@@ -1,7 +1,7 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/esm/taggedTemplateLiteral";
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: calc(50% - 50px);\n  left: 10px;\n  width: 100px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin-right: 20px;\n  width: 100px;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -11,7 +11,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  padding: 20px 30px 20px 130px;\n  font-family: ", ";\n  font-size: 20px;\n  font-weight: lighter;\n  line-height: 25px;\n  background: ", ";\n  color: ", ";\n  border-color: ", ";\n  border-width: 2px;\n  border-style: solid;\n  border-radius: 5px;\n  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  min-height: 75px;\n  padding: 20px 30px 20px 10px;\n  font-family: ", ";\n  font-size: 20px;\n  font-weight: lighter;\n  line-height: 25px;\n  background: ", ";\n  color: ", ";\n  border-color: ", ";\n  border-width: 2px;\n  border-style: solid;\n  border-radius: 5px;\n  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);\n  text-align: justify;\n"]);
 
   _templateObject = function _templateObject() {
     return data;

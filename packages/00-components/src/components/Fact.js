@@ -41,8 +41,10 @@ const animals = {
 };
 
 const Container = styled.div`
-  position: relative;
-  padding: 20px 30px 20px 130px;
+  display: flex;
+  align-items: center;
+  min-height: 75px;
+  padding: 20px 30px 20px 10px;
   font-family: ${({ theme }) => theme.fontFamily};
   font-size: 20px;
   font-weight: lighter;
@@ -54,6 +56,7 @@ const Container = styled.div`
   border-style: solid;
   border-radius: 5px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+  text-align: justify;
 `;
 
 Container.defaultProps = {
@@ -61,9 +64,7 @@ Container.defaultProps = {
 };
 
 const Icon = styled.img`
-  position: absolute;
-  top: calc(50% - 50px);
-  left: 10px;
+  margin-right: 20px;
   width: 100px;
 `;
 
