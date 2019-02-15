@@ -68,3 +68,13 @@ Open [http://localhost:3004](http://localhost:3004) to view it in the browser.
 
 The app will reload if you make edits.<br>
 You will also see any lint errors in the console/app.
+
+### **Package: 05-react-redux-tooling**
+
+#### `npm run start:05`
+
+This starts `packages/05-react-redux-tooling` app.<br>
+Open [http://localhost:3005](http://localhost:3005) to view it in the browser.
+
+The app will reload if you make edits.<br>
+You will also see any lint errors in the console/app.
