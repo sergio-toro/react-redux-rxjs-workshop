@@ -2,7 +2,7 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 
-import { ErrorMessage, Button as BaseButton, Fact as BaseFact, Loading as BaseLoading, defaultTheme } from "00-components";
+import { ErrorMessage, Button as BaseButton, Fact as BaseFact, Loading as BaseLoading } from "00-components";
 
 const Button = styled(BaseButton)`
   margin-left: 0;
