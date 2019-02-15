@@ -53,8 +53,12 @@ const Container = styled.div`
   border-width: 2px;
   border-style: solid;
   border-radius: 5px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
 `;
+
+Container.defaultProps = {
+  theme: defaultTheme
+};
 
 const Icon = styled.img`
   position: absolute;
@@ -70,15 +74,9 @@ type Props = {
 };
 const Fact = ({ className, text, type }: Props) => (
   <Container className={className} type={type}>
-    <p>
-      <Icon src={animals[type].image} />
-      {text}
-    </p>
+    <Icon src={animals[type].image} />
+    {text}
   </Container>
 );
-
-Fact.defaultProps = {
-  theme: defaultTheme
-};
 
 export default Fact;

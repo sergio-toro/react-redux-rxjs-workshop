@@ -11,7 +11,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  padding: 20px 30px 20px 130px;\n  font-family: ", ";\n  font-size: 20px;\n  font-weight: lighter;\n  line-height: 25px;\n  background: ", ";\n  color: ", ";\n  border-color: ", ";\n  border-width: 2px;\n  border-style: solid;\n  border-radius: 5px;\n  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  padding: 20px 30px 20px 130px;\n  font-family: ", ";\n  font-size: 20px;\n  font-weight: lighter;\n  line-height: 25px;\n  background: ", ";\n  color: ", ";\n  border-color: ", ";\n  border-width: 2px;\n  border-style: solid;\n  border-radius: 5px;\n  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -67,6 +67,9 @@ var Container = styled.div(_templateObject(), function (_ref) {
 }, function (props) {
   return animals[props.type].color.primary;
 });
+Container.defaultProps = {
+  theme: defaultTheme
+};
 var Icon = styled.img(_templateObject2());
 
 var Fact = function Fact(_ref2) {
@@ -76,12 +79,9 @@ var Fact = function Fact(_ref2) {
   return React.createElement(Container, {
     className: className,
     type: type
-  }, React.createElement("p", null, React.createElement(Icon, {
+  }, React.createElement(Icon, {
     src: animals[type].image
-  }), text));
+  }), text);
 };
 
-Fact.defaultProps = {
-  theme: defaultTheme
-};
 export default Fact;
