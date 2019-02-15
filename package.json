@@ -10,7 +10,8 @@
     "build:lambda": "cd packages/lambda-server && npm run build",
     "start:lambda": "cd packages/lambda-server && npm run start",
     "start:components": "cd packages/00-components && npm run start",
-    "start:01": "cd packages/01-react && npm run start"
+    "start:01": "cd packages/01-react && npm run start",
+    "start:02": "cd packages/02-react-complex && npm run start"
   },
   "repository": {
     "type": "git",

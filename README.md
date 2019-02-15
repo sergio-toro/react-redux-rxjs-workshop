@@ -34,7 +34,17 @@ This builds `packages/00-components` components to use in other packages.
 #### `npm run start:01`
 
 This starts `packages/01-react` app.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
+
+The app will reload if you make edits.<br>
+You will also see any lint errors in the console/app.
+
+### **Package: 02-react-complex**
+
+#### `npm run start:02`
+
+This starts `packages/02-react` app.<br>
+Open [http://localhost:3002](http://localhost:3002) to view it in the browser.
 
 The app will reload if you make edits.<br>
 You will also see any lint errors in the console/app.
