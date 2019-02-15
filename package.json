@@ -12,7 +12,8 @@
     "start:components": "cd packages/00-components && npm run start",
     "start:01": "cd packages/01-react && npm run start",
     "start:02": "cd packages/02-react-complex && npm run start",
-    "start:03": "cd packages/03-react-redux && npm run start"
+    "start:03": "cd packages/03-react-redux && npm run start",
+    "start:04": "cd packages/04-react-redux-structure && npm run start"
   },
   "repository": {
     "type": "git",

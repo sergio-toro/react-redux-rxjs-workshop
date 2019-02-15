@@ -53,8 +53,18 @@ You will also see any lint errors in the console/app.
 
 #### `npm run start:03`
 
-This starts `packages/02-react` app.<br>
+This starts `packages/03-react-redux` app.<br>
 Open [http://localhost:3003](http://localhost:3003) to view it in the browser.
+
+The app will reload if you make edits.<br>
+You will also see any lint errors in the console/app.
+
+### **Package: 04-react-redux-structure**
+
+#### `npm run start:04`
+
+This starts `packages/04-react-redux-structure` app.<br>
+Open [http://localhost:3004](http://localhost:3004) to view it in the browser.
 
 The app will reload if you make edits.<br>
 You will also see any lint errors in the console/app.
