@@ -1,13 +1,18 @@
 # react-redux-rxjs-workshop
 
-## Setup project
+## Workshop guide
 
-To setup the workshop you need to run:
+To setup and run the workshop you need:
 
 - Node >= **10.14.0**
 - Install dependencies: `npm install`
 - Bootstrap packages: `npm run bootstrap`
 - Start first step: `npm run start:01`
+- Start second step: `npm run start:02`
+- Start third step: `npm run start:03`
+- Start step four: `npm run start:04`
+- Install [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) (for step `05-react-redux-tooling` and the following)
+- Start step five: `npm run start:05`
 
 ## Available Scripts
 
