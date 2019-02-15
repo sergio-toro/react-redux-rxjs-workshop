@@ -1,7 +1,7 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { Fact, Button, Loading } from "../components";
+import { Fact, Button, Loading, ErrorMessage } from "../components";
 
 const text =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu ipsum mollis, accumsan ligula ac, gravida velit. Nam euismod viverra.";
@@ -17,3 +17,5 @@ storiesOf("Button", module)
   .add("primary", () => <Button primary>Some action</Button>);
 
 storiesOf("Loading", module).add("default", () => <Loading />);
+
+storiesOf("ErrorMessage", module).add("default", () => <ErrorMessage>Error while performing some action</ErrorMessage>);
