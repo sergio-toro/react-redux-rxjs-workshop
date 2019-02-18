@@ -1,5 +1,5 @@
 // @flow
-import React, { Fragment } from "react";
+import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 
 import { ErrorMessage, Button as BaseButton, Fact as BaseFact, Loading as BaseLoading } from "00-components";
@@ -35,20 +35,29 @@ type Props = {
   facts: Object[]
 };
 
-const Facts = ({ hasError, isLoading, facts, onFetchFacts }: Props) => (
-  <Fragment>
-    <header>
-      <h1>Cat facts</h1>
-    </header>
+class Facts extends Component<Props> {
+  componentDidMount() {
+    this.props.onFetchFacts();
+  }
 
-    <Button onClick={onFetchFacts}>Refresh Facts</Button>
+  render() {
+    const { hasError, isLoading, facts, onFetchFacts } = this.props;
+    return (
+      <Fragment>
+        <header>
+          <h1>Cat facts</h1>
+        </header>
 
-    <Results>
-      {hasError && <ErrorMessage>Error while fetching facts, try again later</ErrorMessage>}
-      {isLoading && <Loading size={100} />}
-      {!isLoading && facts.map(fact => <Fact key={fact._id} text={fact.text} type={fact.type} />)}
-    </Results>
-  </Fragment>
-);
+        <Button onClick={onFetchFacts}>Refresh Facts</Button>
+
+        <Results>
+          {hasError && <ErrorMessage>Error while fetching facts, try again later</ErrorMessage>}
+          {isLoading && <Loading size={100} />}
+          {!isLoading && facts.map(fact => <Fact key={fact._id} text={fact.text} type={fact.type} />)}
+        </Results>
+      </Fragment>
+    );
+  }
+}
 
 export default Facts;

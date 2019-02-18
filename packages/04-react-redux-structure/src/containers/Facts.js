@@ -1,5 +1,4 @@
 // @flow
-import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 
 import { fetchFacts, fetchFactsSuccess, fetchFactsError } from "../modules/facts";
@@ -27,19 +26,9 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-class FactsWithSideEfects extends PureComponent {
-  componentDidMount() {
-    this.props.onFetchFacts();
-  }
-
-  render() {
-    return <Facts {...this.props} />;
-  }
-}
-
 const FactsContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(FactsWithSideEfects);
+)(Facts);
 
 export default FactsContainer;
