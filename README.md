@@ -93,3 +93,13 @@ Open [http://localhost:3006](http://localhost:3006) to view it in the browser.
 
 The app will reload if you make edits.<br>
 You will also see any lint errors in the console/app.
+
+### **Package: 07-react-redux-rxjs-complex**
+
+#### `npm run start:07`
+
+This starts `packages/07-react-redux-rxjs-complex` app.<br>
+Open [http://localhost:3007](http://localhost:3007) to view it in the browser.
+
+The app will reload if you make edits.<br>
+You will also see any lint errors in the console/app.
