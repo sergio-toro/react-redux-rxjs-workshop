@@ -103,3 +103,13 @@ Open [http://localhost:3007](http://localhost:3007) to view it in the browser.
 
 The app will reload if you make edits.<br>
 You will also see any lint errors in the console/app.
+
+### **Package: 08-react-redux-rxjs-cancellation**
+
+#### `npm run start:08`
+
+This starts `packages/08-react-redux-rxjs-cancellation` app.<br>
+Open [http://localhost:3008](http://localhost:3008) to view it in the browser.
+
+The app will reload if you make edits.<br>
+You will also see any lint errors in the console/app.
