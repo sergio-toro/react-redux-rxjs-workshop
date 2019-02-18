@@ -1,6 +1,6 @@
 import { of } from "rxjs";
 import { ajax } from "rxjs/ajax";
-import { tap, mapTo, mergeMap, filter, map, catchError } from "rxjs/operators";
+import { mapTo, mergeMap, filter, map, catchError } from "rxjs/operators";
 import { combineEpics } from "redux-observable";
 
 import {
