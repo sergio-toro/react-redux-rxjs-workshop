@@ -1,6 +1,6 @@
 import { of, concat } from "rxjs";
 import { ajax } from "rxjs/ajax";
-import { /* debounceTime,  */ takeUntil, mapTo, mergeMap, filter, map, catchError } from "rxjs/operators";
+import { debounceTime, takeUntil, mapTo, mergeMap, filter, map, catchError } from "rxjs/operators";
 import { combineEpics } from "redux-observable";
 
 import {
@@ -41,6 +41,7 @@ function fetchEpic(action$, state$) {
 function refreshEpic(action$) {
   return action$.pipe(
     filter(({ type }) => type === SET_FACTS_LAMBDA_FUNCTION || type === SET_FACTS_AMOUNT || type === SET_FACTS_ANIMALS),
+    debounceTime(750),
     mapTo(fetchFacts())
   );
 }
