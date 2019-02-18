@@ -14,7 +14,8 @@
     "start:02": "cd packages/02-react-complex && npm run start",
     "start:03": "cd packages/03-react-redux && npm run start",
     "start:04": "cd packages/04-react-redux-structure && npm run start",
-    "start:05": "cd packages/05-react-redux-tooling && npm run start"
+    "start:05": "cd packages/05-react-redux-tooling && npm run start",
+    "start:06": "cd packages/06-react-redux-rxjs && npm run start"
   },
   "repository": {
     "type": "git",
