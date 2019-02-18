@@ -113,3 +113,13 @@ Open [http://localhost:3008](http://localhost:3008) to view it in the browser.
 
 The app will reload if you make edits.<br>
 You will also see any lint errors in the console/app.
+
+### **Package: 09-react-redux-rxjs-testing**
+
+#### `npm run start:09`
+
+This starts `packages/09-react-redux-rxjs-testing` app.<br>
+Open [http://localhost:3009](http://localhost:3009) to view it in the browser.
+
+The app will reload if you make edits.<br>
+You will also see any lint errors in the console/app.
