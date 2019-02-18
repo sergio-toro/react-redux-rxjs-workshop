@@ -65,6 +65,20 @@ const Loading = styled(BaseLoading)`
   margin: 50px auto 0;
 `;
 
+const LAMBDA_FUNCTION_OPTIONS = [{ value: "facts", text: "Facts" }, { value: "slow-facts", text: "Slow Facts" }];
+const AMOUNT_OPTIONS = [
+  { value: 8, text: "8" },
+  { value: 16, text: "16" },
+  { value: 32, text: "32" },
+  { value: 64, text: "64" }
+];
+const ANIMALS_OPTIONS = [
+  { value: "cat", text: "Cat" },
+  { value: "dog", text: "Dog" },
+  { value: "snail", text: "Snail" },
+  { value: "horse", text: "Horse" }
+];
+
 type State = {
   hasError: boolean,
   isLoading: boolean,
@@ -134,34 +148,18 @@ class App extends Component<any, State> {
           title="Endpoint:"
           name="lambda"
           value={lambdaFunction}
-          options={[{ value: "facts", text: "Facts" }, { value: "slow-facts", text: "Slow Facts" }]}
+          options={LAMBDA_FUNCTION_OPTIONS}
           onChange={this.onLambdaFunctionChanged}
         />
         <CheckboxList
           title="Animals:"
           name="animals"
           values={animals}
-          options={[
-            { value: "cat", text: "Cat" },
-            { value: "dog", text: "Dog" },
-            { value: "snail", text: "Snail" },
-            { value: "horse", text: "Horse" }
-          ]}
+          options={ANIMALS_OPTIONS}
           onChange={this.onAnimalsChanged}
         />
 
-        <SelectList
-          title="Amount"
-          name="amount"
-          value={amount}
-          options={[
-            { value: 8, text: "8" },
-            { value: 16, text: "16" },
-            { value: 32, text: "32" },
-            { value: 64, text: "64" }
-          ]}
-          onChange={this.onAmountChanged}
-        />
+        <SelectList title="Amount" name="amount" value={amount} options={AMOUNT_OPTIONS} onChange={this.onAmountChanged} />
 
         <Results>
           {hasError && <ErrorMessage>Error while fetching facts, try again later</ErrorMessage>}
