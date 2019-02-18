@@ -87,7 +87,7 @@ class Facts extends Component<Props> {
       amount,
       animals,
       lambdaFunction,
-      onRefreshFacts,
+      onFetchFacts,
       onAmountChanged,
       onLambdaFunctionChanged,
       onAnimalsChanged
@@ -98,7 +98,7 @@ class Facts extends Component<Props> {
           <h1>Cat facts</h1>
         </header>
 
-        <Button onClick={onRefreshFacts}>Refresh Facts</Button>
+        <Button onClick={onFetchFacts}>Refresh Facts</Button>
         <RadioList
           title="Endpoint:"
           name="lambda"

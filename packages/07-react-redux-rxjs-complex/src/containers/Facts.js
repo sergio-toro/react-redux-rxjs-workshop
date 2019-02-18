@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  onRefreshFacts: fetchFacts,
+  onFetchFacts: fetchFacts,
   onAmountChanged: setFactsAmount,
   onLambdaFunctionChanged: setLambdaFunction,
   onAnimalsChanged: setAnimals
