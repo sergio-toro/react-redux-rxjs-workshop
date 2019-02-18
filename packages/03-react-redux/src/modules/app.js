@@ -1,4 +1,10 @@
 // @flow
+type FactsType = Object[];
+type State = {
+  hasError: boolean,
+  isLoading: boolean,
+  facts: FactsType
+};
 
 const FETCH_FACTS = "@APP/FETCH_FACTS";
 const FETCH_FACTS_SUCCESS = "@APP/FETCH_FACTS_SUCCESS";
@@ -8,7 +14,7 @@ export const fetchFacts = () => ({
   type: FETCH_FACTS
 });
 
-export const fetchFactsSuccess = facts => ({
+export const fetchFactsSuccess = (facts: FactsType) => ({
   type: FETCH_FACTS_SUCCESS,
   payload: facts
 });
@@ -23,13 +29,7 @@ const initialState = {
   facts: []
 };
 
-type State = {
-  hasError: boolean,
-  isLoading: boolean,
-  facts: Object[]
-};
-
-export default function reducer(state: State = initialState, action) {
+export default function reducer(state: State = initialState, action: any) {
   switch (action.type) {
     case FETCH_FACTS:
       return {

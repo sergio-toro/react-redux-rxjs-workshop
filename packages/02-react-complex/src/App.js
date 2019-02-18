@@ -79,12 +79,15 @@ const ANIMALS_OPTIONS = [
   { value: "horse", text: "Horse" }
 ];
 
+type LambdaFunctionType = "facts" | "slow-facts";
+type AnimalsType = Array<"cat" | "dog" | "snail" | "horse">;
+
 type State = {
   hasError: boolean,
   isLoading: boolean,
   amount: number,
-  animals: Array<"cat" | "dog" | "snail" | "horse">,
-  lambdaFunction: "facts" | "slow-facts",
+  animals: AnimalsType,
+  lambdaFunction: LambdaFunctionType,
   facts: Object[]
 };
 class App extends Component<any, State> {
@@ -122,15 +125,15 @@ class App extends Component<any, State> {
     this.fetchFacts();
   };
 
-  onLambdaFunctionChanged = lambdaFunction => {
+  onLambdaFunctionChanged = (lambdaFunction: LambdaFunctionType) => {
     this.setState({ lambdaFunction }, () => this.fetchFacts());
   };
 
-  onAnimalsChanged = animals => {
+  onAnimalsChanged = (animals: AnimalsType) => {
     this.setState({ animals }, () => this.fetchFacts());
   };
 
-  onAmountChanged = amount => {
+  onAmountChanged = (amount: number) => {
     this.setState({ amount }, () => this.fetchFacts());
   };
 

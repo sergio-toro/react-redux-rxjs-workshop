@@ -32,7 +32,8 @@ const Loading = styled(BaseLoading)`
 type Props = {
   hasError: boolean,
   isLoading: boolean,
-  facts: Object[]
+  facts: Object[],
+  onFetchFacts: Function
 };
 
 class Facts extends Component<Props> {

@@ -71,7 +71,11 @@ type Props = {
   facts: Object[],
   amount: number,
   animals: Array<"cat" | "dog" | "snail" | "horse">,
-  lambdaFunction: "facts" | "slow-facts"
+  lambdaFunction: "facts" | "slow-facts",
+  onFetchFacts: Function,
+  onAmountChanged: Function,
+  onLambdaFunctionChanged: Function,
+  onAnimalsChanged: Function
 };
 
 class Facts extends Component<Props> {

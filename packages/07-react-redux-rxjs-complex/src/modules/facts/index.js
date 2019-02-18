@@ -1,4 +1,15 @@
 // @flow
+type FactsType = Object[];
+type LambdaFunctionType = "facts" | "slow-facts";
+type AnimalsType = Array<"cat" | "dog" | "snail" | "horse">;
+type State = {
+  hasError: boolean,
+  isLoading: boolean,
+  list: FactsType,
+  amount: number,
+  animals: AnimalsType,
+  lambdaFunction: LambdaFunctionType
+};
 
 export const FETCH_FACTS = "@APP/FETCH_FACTS";
 export const FETCH_FACTS_SUCCESS = "@APP/FETCH_FACTS_SUCCESS";
@@ -12,7 +23,7 @@ export const fetchFacts = () => ({
   type: FETCH_FACTS
 });
 
-export const fetchFactsSuccess = facts => ({
+export const fetchFactsSuccess = (facts: FactsType) => ({
   type: FETCH_FACTS_SUCCESS,
   payload: facts
 });
@@ -20,17 +31,17 @@ export const fetchFactsSuccess = facts => ({
 export const fetchFactsError = () => ({
   type: FETCH_FACTS_ERROR
 });
-export const setLambdaFunction = lambdaFunction => ({
+export const setLambdaFunction = (lambdaFunction: LambdaFunctionType) => ({
   type: SET_FACTS_LAMBDA_FUNCTION,
   payload: lambdaFunction
 });
 
-export const setFactsAmount = animals => ({
+export const setFactsAmount = (animals: AnimalsType) => ({
   type: SET_FACTS_AMOUNT,
   payload: animals
 });
 
-export const setAnimals = amount => ({
+export const setAnimals = (amount: number) => ({
   type: SET_FACTS_ANIMALS,
   payload: amount
 });
@@ -44,18 +55,9 @@ const initialState = {
   animals: ["cat"]
 };
 
-type State = {
-  hasError: boolean,
-  isLoading: boolean,
-  list: Object[],
-  amount: number,
-  animals: Array<"cat" | "dog" | "snail" | "horse">,
-  lambdaFunction: "facts" | "slow-facts"
-};
-
 export { default as factsEpic } from "./epic";
 
-export default function reducer(state: State = initialState, action) {
+export default function reducer(state: State = initialState, action: any) {
   switch (action.type) {
     case FETCH_FACTS:
       return {

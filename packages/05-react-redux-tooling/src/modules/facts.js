@@ -4,11 +4,18 @@ const FETCH_FACTS = "@APP/FETCH_FACTS";
 const FETCH_FACTS_SUCCESS = "@APP/FETCH_FACTS_SUCCESS";
 const FETCH_FACTS_ERROR = "@APP/FETCH_FACTS_ERROR";
 
+type FactsType = Object[];
+type State = {
+  hasError: boolean,
+  isLoading: boolean,
+  list: FactsType
+};
+
 export const fetchFacts = () => ({
   type: FETCH_FACTS
 });
 
-export const fetchFactsSuccess = facts => ({
+export const fetchFactsSuccess = (facts: FactsType) => ({
   type: FETCH_FACTS_SUCCESS,
   payload: facts
 });
@@ -23,13 +30,7 @@ const initialState = {
   list: []
 };
 
-type State = {
-  hasError: boolean,
-  isLoading: boolean,
-  list: Object[]
-};
-
-export default function reducer(state: State = initialState, action) {
+export default function reducer(state: State = initialState, action: any) {
   switch (action.type) {
     case FETCH_FACTS:
       return {
