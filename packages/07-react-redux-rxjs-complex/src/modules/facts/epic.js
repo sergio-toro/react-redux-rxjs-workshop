@@ -15,11 +15,11 @@ import {
 
 const BASE_URL = "https://kodify-workshop.netlify.com/.netlify/functions/";
 
-function fetchEpic($action, $state) {
-  return $action.pipe(
+function fetchEpic(action$, state$) {
+  return action$.pipe(
     filter(action => action.type === FETCH_FACTS),
     mergeMap(() => {
-      const { lambdaFunction, amount, animals } = $state.value.facts;
+      const { lambdaFunction, amount, animals } = state$.value.facts;
       const types = animals.join(",");
       const request$ = ajax.getJSON(`${BASE_URL}${lambdaFunction}?amount=${amount}&types=${types}`).pipe(
         map(data => fetchFactsSuccess(data)),
@@ -33,8 +33,8 @@ function fetchEpic($action, $state) {
   );
 }
 
-function refreshEpic($action) {
-  return $action.pipe(
+function refreshEpic(action$) {
+  return action$.pipe(
     filter(({ type }) => type === SET_FACTS_LAMBDA_FUNCTION || type === SET_FACTS_AMOUNT || type === SET_FACTS_ANIMALS),
     mapTo(fetchFacts())
   );

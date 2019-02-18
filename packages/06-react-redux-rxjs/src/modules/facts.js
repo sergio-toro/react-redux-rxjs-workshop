@@ -20,8 +20,8 @@ export const fetchFactsError = () => ({
   type: FETCH_FACTS_ERROR
 });
 
-export function factsEpic($action) {
-  return $action.pipe(
+export function factsEpic(action$) {
+  return action$.pipe(
     filter(action => action.type === FETCH_FACTS),
     mergeMap(() => {
       const request$ = ajax.getJSON(`https://kodify-workshop.netlify.com/.netlify/functions/facts?amount=6`).pipe(
