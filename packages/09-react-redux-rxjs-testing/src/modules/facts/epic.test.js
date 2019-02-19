@@ -34,6 +34,8 @@ describe("factsEpic", () => {
   let testScheduler;
 
   beforeEach(() => {
+    // Learn more about TestScheduler
+    // https://github.com/ReactiveX/rxjs/blob/master/doc/marble-testing.md
     testScheduler = new TestScheduler((actual, expected) => {
       expect(actual).toEqual(expected);
     });
