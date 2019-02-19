@@ -16,6 +16,7 @@ const Button = styled(BaseButton)`
   margin-left: 0;
   margin-right: 20px;
 `;
+Button.displayName = "RefreshButton";
 
 const RadioList = styled(BaseRadioList)`
   padding-right: 20px;
