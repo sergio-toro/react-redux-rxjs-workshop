@@ -1,4 +1,15 @@
-import _taggedTemplateLiteral from "@babel/runtime/helpers/esm/taggedTemplateLiteral";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  label {\n    margin-left: 10px;\n  }\n"]);
@@ -10,9 +21,9 @@ function _templateObject() {
   return data;
 }
 
-import React from "react";
-import styled from "styled-components";
-var Container = styled.div(_templateObject());
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Container = _styledComponents.default.div(_templateObject());
 
 var CheckboxList = function CheckboxList(_ref) {
   var className = _ref.className,
@@ -22,12 +33,12 @@ var CheckboxList = function CheckboxList(_ref) {
       values = _ref.values,
       _onChange = _ref.onChange;
   var valuesSet = new Set(values);
-  return React.createElement(Container, {
+  return _react.default.createElement(Container, {
     className: className
-  }, React.createElement("strong", null, title), options.map(function (option) {
-    return React.createElement("label", {
+  }, _react.default.createElement("strong", null, title), options.map(function (option) {
+    return _react.default.createElement("label", {
       key: "".concat(name, "-").concat(option.value)
-    }, React.createElement("input", {
+    }, _react.default.createElement("input", {
       type: "checkbox",
       name: name,
       value: option.value,
@@ -51,4 +62,5 @@ CheckboxList.defaultProps = {
     return undefined;
   }
 };
-export default CheckboxList;
+var _default = CheckboxList;
+exports.default = _default;
