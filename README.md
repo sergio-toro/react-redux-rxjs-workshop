@@ -5,14 +5,9 @@
 To setup and run the workshop you need:
 
 - Node >= **10.14.0**
+- Install [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 - Install dependencies: `npm install`
 - Bootstrap packages: `npm run bootstrap`
-- Start first step: `npm run start:01`
-- Start second step: `npm run start:02`
-- Start third step: `npm run start:03`
-- Start step four: `npm run start:04`
-- Install [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) (for step `05-react-redux-tooling` and the following)
-- Start step five: `npm run start:05`
 
 ## Available Scripts
 
@@ -20,106 +15,26 @@ In the project directory, you can run:
 
 ### **Package: 00-components**
 
-This package shows how to delvelop isolated and reusable UI components
+This package shows how to delvelop isolated and reusable UI components.
 
-#### `npm run start:components`
+- Start components `npm run start:components`
+- Build components `npm run build:components`
 
-This starts `packages/00-components` storybook to develop components.<br>
-Open [http://localhost:9009](http://localhost:9009) to view it in the browser.
+### **Workshop steps:**
 
-The storybook sandbox will reload if you make edits.<br>
+Every step will run on a separate port on `http://localhost:30XX`.<br />
+<br />
+The app will reload if you make edits.<br />
 You will also see any lint errors in the console/app.
 
-#### `npm run build:components`
+- Run step 01: `npm run start:01`
+- Run step 02: `npm run start:02`
+- Run step 03: `npm run start:03`
+- Run step 04: `npm run start:04`
+- Run step 05: `npm run start:05`
+- Run step 06: `npm run start:06`
+- Run step 07: `npm run start:07`
+- Run step 08: `npm run start:08`
+- Run step 09: `npm run start:09`
 
-This builds `packages/00-components` components to use in other packages.
-
-### **Package: 01-react**
-
-#### `npm run start:01`
-
-This starts `packages/01-react` app.<br>
-Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
-
-The app will reload if you make edits.<br>
-You will also see any lint errors in the console/app.
-
-### **Package: 02-react-complex**
-
-#### `npm run start:02`
-
-This starts `packages/02-react` app.<br>
-Open [http://localhost:3002](http://localhost:3002) to view it in the browser.
-
-The app will reload if you make edits.<br>
-You will also see any lint errors in the console/app.
-
-### **Package: 03-react-redux**
-
-#### `npm run start:03`
-
-This starts `packages/03-react-redux` app.<br>
-Open [http://localhost:3003](http://localhost:3003) to view it in the browser.
-
-The app will reload if you make edits.<br>
-You will also see any lint errors in the console/app.
-
-### **Package: 04-react-redux-structure**
-
-#### `npm run start:04`
-
-This starts `packages/04-react-redux-structure` app.<br>
-Open [http://localhost:3004](http://localhost:3004) to view it in the browser.
-
-The app will reload if you make edits.<br>
-You will also see any lint errors in the console/app.
-
-### **Package: 05-react-redux-tooling**
-
-#### `npm run start:05`
-
-This starts `packages/05-react-redux-tooling` app.<br>
-Open [http://localhost:3005](http://localhost:3005) to view it in the browser.
-
-The app will reload if you make edits.<br>
-You will also see any lint errors in the console/app.
-
-### **Package: 06-react-redux-rxjs**
-
-#### `npm run start:06`
-
-This starts `packages/06-react-redux-rxjs` app.<br>
-Open [http://localhost:3006](http://localhost:3006) to view it in the browser.
-
-The app will reload if you make edits.<br>
-You will also see any lint errors in the console/app.
-
-### **Package: 07-react-redux-rxjs-complex**
-
-#### `npm run start:07`
-
-This starts `packages/07-react-redux-rxjs-complex` app.<br>
-Open [http://localhost:3007](http://localhost:3007) to view it in the browser.
-
-The app will reload if you make edits.<br>
-You will also see any lint errors in the console/app.
-
-### **Package: 08-react-redux-rxjs-cancellation**
-
-#### `npm run start:08`
-
-This starts `packages/08-react-redux-rxjs-cancellation` app.<br>
-Open [http://localhost:3008](http://localhost:3008) to view it in the browser.
-
-The app will reload if you make edits.<br>
-You will also see any lint errors in the console/app.
-
-### **Package: 09-react-redux-rxjs-testing**
-
-#### `npm run start:09`
-
-This starts `packages/09-react-redux-rxjs-testing` app.<br>
-Open [http://localhost:3009](http://localhost:3009) to view it in the browser.
-
-The app will reload if you make edits.<br>
-You will also see any lint errors in the console/app.
+- Test step 09: `npm run test:09`
