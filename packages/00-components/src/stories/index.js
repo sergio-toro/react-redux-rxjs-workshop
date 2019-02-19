@@ -2,25 +2,40 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
+import { withKnobs, select, text, boolean, number } from "@storybook/addon-knobs";
 
 import { CheckboxList, SelectList, RadioList, Fact, Button, Loading, ErrorMessage } from "../components";
 
-const text =
+const lorem =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu ipsum mollis, accumsan ligula ac, gravida velit. Nam euismod viverra.";
-
+const options = ["cat", "dog", "snail", "horse"];
 storiesOf("Fact", module)
-  .add("cat", () => <Fact text={text} type="cat" />)
-  .add("dog", () => <Fact text={text} type="dog" />)
-  .add("snail", () => <Fact text={text} type="snail" />)
-  .add("horse", () => <Fact text={text} type="horse" />);
+  .addDecorator(withKnobs)
+  .add("cat", () => <Fact text={text("Text", lorem)} type={select("type", options, "cat")} />)
+  .add("dog", () => <Fact text={text("Text", lorem)} type={select("type", options, "dog")} />)
+  .add("snail", () => <Fact text={text("Text", lorem)} type={select("type", options, "snail")} />)
+  .add("horse", () => <Fact text={text("Text", lorem)} type={select("type", options, "horse")} />);
 
 storiesOf("Button", module)
-  .add("default", () => <Button>Some action</Button>)
-  .add("primary", () => <Button primary>Some action</Button>);
+  .addDecorator(withKnobs)
+  .add("default", () => (
+    <Button onClick={action("click")} primary={boolean("Primary", false)}>
+      Some action
+    </Button>
+  ))
+  .add("primary", () => (
+    <Button onClick={action("click")} primary={boolean("Primary", true)}>
+      Some action
+    </Button>
+  ));
 
-storiesOf("Loading", module).add("default", () => <Loading />);
+storiesOf("Loading", module)
+  .addDecorator(withKnobs)
+  .add("default", () => <Loading size={number("Size", 65)} />);
 
-storiesOf("ErrorMessage", module).add("default", () => <ErrorMessage>Error while performing some action</ErrorMessage>);
+storiesOf("ErrorMessage", module)
+  .addDecorator(withKnobs)
+  .add("default", () => <ErrorMessage>{text("Message", "Error while performing some action")}</ErrorMessage>);
 
 storiesOf("SelectList", module)
   .add("default", () => (
