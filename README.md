@@ -1,6 +1,6 @@
-# react-redux-rxjs-workshop
+# React + Redux + Rxjs + Testing
 
-## Workshop guide
+## Getting Started
 
 To setup and run the workshop you need:
 
