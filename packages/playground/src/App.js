@@ -1,5 +1,5 @@
 // @flow
-import React, { Fragment } from "react";
+import React from "react";
 import { createGlobalStyle } from "styled-components";
 import { defaultTheme } from "00-components";
 
@@ -16,11 +16,14 @@ GlobalStyle.defaultProps = {
   theme: defaultTheme
 };
 
+// Endpoint to fetch the data:
+// https://kodify-workshop.netlify.com/.netlify/functions/facts?amount=6
+
 const App = () => (
-  <Fragment>
+  <div>
     <GlobalStyle />
     Hello world
-  </Fragment>
+  </div>
 );
 
 export default App;
