@@ -36,5 +36,6 @@ You will also see any lint errors in the console/app.
 - Run step 07: `npm run start:07`
 - Run step 08: `npm run start:08`
 - Run step 09: `npm run start:09`
+- Run step 10: `npm run start:10`
 
 - Test step 09: `npm run test:09`
